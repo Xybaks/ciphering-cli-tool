@@ -1,1 +1,0 @@
-console.log("Hello my 1st Node.js project")
