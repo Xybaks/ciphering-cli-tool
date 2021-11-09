@@ -1,4 +1,4 @@
-let inString = "aaaZ_gsfg-gsdfg  +;:QQQAAA"
+let inString = "abyzABYZ"
 let outString = '';
 for (let i = 0; i < inString.length; i++) {
     let codeNumber = inString.charCodeAt(i);
