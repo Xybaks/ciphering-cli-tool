@@ -1,7 +1,13 @@
 const argumentsCheckFunction = require('./argumentsCheckFn.js');
+const { pipeline } = require('stream');
 
-const argsArray = process.argv.slice(2)
-const argumentsData = argumentsCheckFunction(argsArray)
+//try to get valid data from args
+try { const argumentsData = argumentsCheckFunction(process.argv.slice(2)) }
+catch { new Error(error) }
+
+pipeline(
+
+)
 const inputData = argumentsData.inputPath.length > 0
     ? {
         //use ReadStream
