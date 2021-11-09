@@ -6,9 +6,17 @@ module.exports = (consoleArguments) => {
         throw new Error('not valid number of  arguments of app, S')
     }
     let configCounter = 0
+    let configData = ''
     let configIndex = -1
+
     let inputPathCounter = 0
+    let inputPath = ''
+    let inputIndex = -1
+
     let outputPathCounter = 0
+    let outputPath = ''
+    let outputIndex = -1
+
     let orderError = 0
 
     consoleArguments.forEach((element, index) => {
@@ -28,36 +36,47 @@ module.exports = (consoleArguments) => {
                 break
             }
             case '-i': {
-                index % 2 === 0 ? ++inputPathCounter : ++orderError
+                if (index % 2 === 0) {
+                    ++inputPathCounter
+                    inputIndex = index
+                } else ++orderError
                 break
             }
             case '--input': {
-                index % 2 === 0 ? ++inputPathCounter : ++orderError
+                if (index % 2 === 0) {
+                    ++inputPathCounter
+                    inputIndex = index
+                } else ++orderError
                 break
             }
             case '-o': {
-                index % 2 === 0 ? ++outputPathCounter : ++orderError
+                if (index % 2 === 0) {
+                    ++outputPathCounter
+                    outputIndex = index
+                } else ++orderError
                 break
             }
             case '--output': {
-                ++outputPathCounter
+                if (index % 2 === 0) {
+                    ++outputPathCounter
+                    outputIndex = index
+                } else ++orderError
                 break
             }
         }
     });
-    console.log("configCounter", configCounter);
-    console.log("inputPathCounter", inputPathCounter);
-    console.log("outputPathCounter", outputPathCounter);
+
     if ((configCounter !== 1)
         || (inputPathCounter !== (1 || 0))
         || (outputPathCounter !== (1 || 0))
         || orderError > 0) {
         throw new Error('wrong arguments input :(')
     }
-    const checkResult = configChangeFn(consoleArguments[configIndex + 1])
-    if (checkResult.hasOwnProperty("err")) {
-        throw new Error(checkResult.err)
+    configData = configChangeFn(consoleArguments[configIndex + 1])
+    if (configData.hasOwnProperty("err")) {
+        throw new Error(configData.err)
     }
-    return checkResult
+    if (inputIndex > -1) inputPath = consoleArguments[inputIndex]
+    if (outputIndex > -1) outputPath = consoleArguments[outputIndex]
+    return { configData, inputPath, outputPath }
 }
-
