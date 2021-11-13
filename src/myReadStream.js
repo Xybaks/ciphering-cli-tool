@@ -1,22 +1,42 @@
-const {
-    // incoming request, file read stream
-    Readable,
-    // server response to client, outgoing request, file write stream
-    // Writable,
-    // implements both Readable and Writable, net.Socket
-    // Duplex,
-    // same as Duplex, but allows to modify data in stream
-    // Transform,
-} = require('stream');
+//copy-pasted from https://nodejs.org/api/stream.html
 
-class MyReadable extends Readable {
-    filePath = ""
-    hasPath = false
-    constructor(filePath, options = {}) {
-        super
-            this.filePath = filePath
+const { Readable } = require('stream');
+const fs = require('fs');
 
+class MyReadStream extends Readable {
+    constructor(filename) {
+        super();
+        this.filename = filename;
+        this.fd = null;
+    }
+    // this 3 methods run one-by-one 
+    //
+    _construct(callback) {
+        fs.open(this.filename, (err, fd) => {
+            if (err) {
+                throw new Error(`App can't open the file: ${filename}`)
+            } else {
+                this.fd = fd;
+                callback();
+            }
+        });
+    }
+    _read(n) {
+        const buf = Buffer.alloc(n);
+        fs.read(this.fd, buf, 0, n, null, (err, bytesRead) => {
+            if (err) {
+                throw new Error(`App can't read the file: ${filename}`)
+            } else {
+                this.push(bytesRead > 0 ? buf.slice(0, bytesRead) : null);
+            }
+        });
+    }
+    _destroy(err, callback) {
+        if (this.fd) {
+            fs.close(this.fd, (er) => callback(er || err));
+        } else {
+            throw new Error(`Error of _destroy method  during reading the file: ${filename}`)
+        }
     }
 }
-const myWritable = new MyWritable('222')
-const myReadable = new MyReadable('23423')
+module.exports = MyReadStream
