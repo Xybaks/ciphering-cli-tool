@@ -2,7 +2,7 @@
 const { Writable } = require('stream')
 const fs = require('fs')
 
-class MyWriteStream extends Writable {
+module.exports = class MyWriteStream extends Writable {
     constructor(filename) {
         super()
         this.filename = filename
@@ -34,5 +34,3 @@ class MyWriteStream extends Writable {
         }
     }
 }
-
-module.exports = MyWriteStream
