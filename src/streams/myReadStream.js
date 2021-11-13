@@ -9,7 +9,7 @@ class MyReadStream extends Readable {
         this.filename = filename;
         this.fd = null;
     }
-    // this 3 methods run one-by-one 
+    // these 3 methods run one-by-one 
     //
     _construct(callback) {
         fs.open(this.filename, (err, fd) => {
@@ -21,6 +21,7 @@ class MyReadStream extends Readable {
             }
         });
     }
+
     _read(n) {
         const buf = Buffer.alloc(n);
         fs.read(this.fd, buf, 0, n, null, (err, bytesRead) => {
@@ -31,6 +32,7 @@ class MyReadStream extends Readable {
             }
         });
     }
+
     _destroy(err, callback) {
         if (this.fd) {
             fs.close(this.fd, (er) => callback(er || err));

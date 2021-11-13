@@ -8,7 +8,8 @@ class MyWriteStream extends Writable {
         this.filename = filename
         this.fd = null
     }
-
+    // these 3 methods run one-by-one 
+    //'a+' - flag to add to existing text
     _construct(callback) {
         fs.open(this.filename, 'a+', (err, fd) => {
             if (err) {
@@ -23,7 +24,6 @@ class MyWriteStream extends Writable {
     _write(chunk, _encoding, callback) {
         fs.write(this.fd, chunk, callback)
     }
-
 
     _destroy(err, callback) {
         if (this.fd) {

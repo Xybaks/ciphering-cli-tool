@@ -1,0 +1,18 @@
+
+const { Transform } = require('stream')
+
+class MyTransformStream extends Transform {
+    constructor(options) {
+        super()
+        this.config = options.config
+        this.ciphering = options.ciphering
+    }
+
+    _transform(chunk, _encoding, callback) {
+        const data = this.ciphering(this.config, chunk.toString())
+        this.push(data)
+        callback()
+    }
+}
+
+module.exports = MyTransformStream
