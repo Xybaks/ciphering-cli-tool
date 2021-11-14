@@ -1,12 +1,12 @@
-const configChangeFn = require('./configChangeFn.js');
+const fs = require('fs');
+const MyCustomError = require('../customError/myCustomError')
 
 module.exports = (consoleArguments) => {
 
     if ((consoleArguments.length <= 1) || (consoleArguments.length % 2 === 1)) {
-        throw new Error('not valid number of  arguments of app, S')
+        throw new MyCustomError('not valid number of  arguments of app or some argument is empty string ')
     }
     let configCounter = 0
-    let configData = ''
     let configIndex = -1
 
     let inputPathCounter = 0
@@ -67,16 +67,27 @@ module.exports = (consoleArguments) => {
     });
 
     if ((configCounter !== 1)
-        || (inputPathCounter !== (1 || 0))
-        || (outputPathCounter !== (1 || 0))
+        || (inputPathCounter > 1 || inputPathCounter < 0)
+        || (outputPathCounter > 1 || outputPathCounter < 0)
+        || orderError > 0
         || orderError > 0) {
-        throw new Error('wrong arguments input :(')
+        throw new MyCustomError('wrong arguments input :(')
     }
-    configData = configChangeFn(consoleArguments[configIndex + 1])
-    if (configData.hasOwnProperty("err")) {
-        throw new Error(configData.err)
+
+    if (inputIndex > -1) inputPath = consoleArguments[inputIndex + 1]
+    if (outputIndex > -1) outputPath = consoleArguments[outputIndex + 1]
+    if (consoleArguments[configIndex + 1].length < 1) {
+        throw new MyCustomError('empty config input :(')
     }
-    if (inputIndex > -1) inputPath = consoleArguments[inputIndex]
-    if (outputIndex > -1) outputPath = consoleArguments[outputIndex]
-    return { configData, inputPath, outputPath }
+    //check of wrong path to file
+    const hasInputFile = fs.existsSync(inputPath)
+    const hasOutputFile = fs.existsSync(outputPath)
+    if (!hasInputFile && inputIndex > -1) {
+        throw new MyCustomError(`!!! App can't open the input file`)
+    }
+    if (!hasOutputFile && outputIndex > -1) {
+        throw new MyCustomError(`!!! App can't open the output file`)
+    }
+
+    return { configIndex, inputPath, outputPath, }
 }

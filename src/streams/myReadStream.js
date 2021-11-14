@@ -1,9 +1,9 @@
-//copy-pasted from https://nodejs.org/api/stream.html
-
 const { Readable } = require('stream');
 const fs = require('fs');
 
-module.exports = class MyReadStream extends Readable {
+const MyCustomError = require('../customError/myCustomError')
+
+class MyReadStream extends Readable {
     constructor(filename) {
         super();
         this.filename = filename;
@@ -12,9 +12,9 @@ module.exports = class MyReadStream extends Readable {
     // these 3 methods run one-by-one 
     //
     _construct(callback) {
-        fs.open(this.filename, (err, fd) => {
+        fs.open(this.filename, 'a+', (err, fd) => {
             if (err) {
-                throw new Error(`App can't open the file: ${filename}`)
+                throw new MyCustomError(`App can't open the input file`)
             } else {
                 this.fd = fd;
                 callback();
@@ -26,7 +26,7 @@ module.exports = class MyReadStream extends Readable {
         const buf = Buffer.alloc(n);
         fs.read(this.fd, buf, 0, n, null, (err, bytesRead) => {
             if (err) {
-                throw new Error(`App can't read the file: ${filename}`)
+                this.destroy(err)
             } else {
                 this.push(bytesRead > 0 ? buf.slice(0, bytesRead) : null);
             }
@@ -37,7 +37,9 @@ module.exports = class MyReadStream extends Readable {
         if (this.fd) {
             fs.close(this.fd, (er) => callback(er || err));
         } else {
-            throw new Error(`Error of _destroy method  during reading the file: ${filename}`)
+            callback(err)
         }
     }
 }
+
+module.exports = MyReadStream
