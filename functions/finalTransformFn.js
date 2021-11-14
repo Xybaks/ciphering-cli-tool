@@ -7,6 +7,9 @@ module.exports = (configData, changStr) => {
     let arrayData = configData.split('-')
     let changStr2 = changStr.toString()
     arrayData.forEach(element => {
+        if (element !== "A" && element !== "C0" && element !== "C1" && element !== "R0" && element !== "R1") {
+            throw new MyCustomError('Wrong config was used')
+        }
         switch (element) {
             case "A":  // for Atbash
                 changStr2 = atbashUseFn(changStr2.toString())
