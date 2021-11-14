@@ -63,6 +63,9 @@ module.exports = (consoleArguments) => {
                 } else ++orderError
                 break
             }
+            default: {
+                throw new MyCustomError('not valid config!')
+            }
         }
     });
 
