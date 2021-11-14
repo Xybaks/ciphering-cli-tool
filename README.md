@@ -23,7 +23,6 @@ Config is a string with pattern `{XY(-)}n`, where:
 
 For example, config `"C1-C1-R0-A"` means "encode by Caesar cipher => encode by Caesar cipher => decode by ROT-8 => use Atbash"
 
-
 Самопроверка:
 
 1 README.md описано, как можно запустить программу из командной строки, описаны аргументы, которые можно передать приложению.
@@ -72,3 +71,4 @@ For example, config `"C1-C1-R0-A"` means "encode by Caesar cipher => encode by C
 ДопРеализация выполнена вся (30 баллов)
 
 штрафы  отсутствуют. итого : 190 баллов ( хотелось бы верить.  )
+
