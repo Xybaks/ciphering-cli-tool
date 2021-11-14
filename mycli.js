@@ -11,8 +11,8 @@ const MyWriteStream = require('./streams/myWriteStream')
 //try to get valid data from args
 const argumentsData = argumentsCheckFunction(argv.slice(2)) // validation of function's arguments is inside
 const configData = argv[argumentsData.configIndex + 3]
-const inputPath = argumentsData.inputPath.length > 0 ? path.join(__dirname, '../', argumentsData.inputPath) : ""
-const outputPath = !!argumentsData.outputPath ? path.join(__dirname, '../', argumentsData.outputPath) : ""
+const inputPath = argumentsData.inputPath.length > 0 ? path.join(__dirname, './', argumentsData.inputPath) : ""
+const outputPath = !!argumentsData.outputPath ? path.join(__dirname, './', argumentsData.outputPath) : ""
 
 // final streams 
 const finalReadStream = !!argumentsData.inputPath ?
