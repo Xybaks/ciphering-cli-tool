@@ -24,14 +24,14 @@ module.exports = (consoleArguments) => {
             case '-c': {
                 if (index % 2 === 0) {
                     ++configCounter
-                    ++configIndex
+                    configIndex = index
                 } else ++orderError
                 break
             }
             case '--config': {
                 if (index % 2 === 0) {
                     ++configCounter
-                    ++configIndex
+                    configIndex = index
                 } else ++orderError
                 break
             }
