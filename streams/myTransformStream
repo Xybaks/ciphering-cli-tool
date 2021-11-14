@@ -1,0 +1,16 @@
+const { Transform } = require('stream')
+
+const finalTransformFn = require('./../functions/finalTransformFn')
+
+module.exports = class MyTransformStream extends Transform {
+    constructor(options) {
+        super()
+        this.configData = options.configData
+    }
+
+    _transform(chunk, _encoding, callback) {
+        let data = finalTransformFn(this.configData, chunk.toString())
+        this.push(data)
+        callback()
+    }
+}
