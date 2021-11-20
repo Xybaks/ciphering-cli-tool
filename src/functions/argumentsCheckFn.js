@@ -61,9 +61,6 @@ module.exports = (consoleArguments) => {
                 }
                 break
             }
-            default: {
-
-            }
         }
     });
     if (configCounter > 1) {

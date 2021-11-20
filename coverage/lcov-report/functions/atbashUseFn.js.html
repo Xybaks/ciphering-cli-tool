@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -66,24 +66,24 @@
 <a name='L7'></a><a href='#L7'>7</a>
 <a name='L8'></a><a href='#L8'>8</a>
 <a name='L9'></a><a href='#L9'>9</a>
-<a name='L10'></a><a href='#L10'>10</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L10'></a><a href='#L10'>10</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >module.exports = <span class="fstat-no" title="function not covered" >(i</span>nString) =&gt; {</span>
-    let outString = <span class="cstat-no" title="statement not covered" >'';</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; inString.length; i++) {</span>
-        let codeNumber = <span class="cstat-no" title="statement not covered" >inString.charCodeAt(i);</span>
-<span class="cstat-no" title="statement not covered" >        if (96 &lt; codeNumber &amp;&amp; codeNumber &lt; 123) <span class="cstat-no" title="statement not covered" >outString = outString + String.fromCharCode(97 + (122 - codeNumber))</span></span>
-        else <span class="cstat-no" title="statement not covered" >if (64 &lt; codeNumber &amp;&amp; codeNumber &lt; 91) <span class="cstat-no" title="statement not covered" >outString = outString + String.fromCharCode(65 + (90 - codeNumber))</span></span>
-        else <span class="cstat-no" title="statement not covered" >outString = outString + String.fromCharCode(codeNumber)</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = (inString) =&gt; {
+    let outString = '';
+    for (let i = 0; i &lt; inString.length; i++) {
+        let codeNumber = inString.charCodeAt(i);
+        if (96 &lt; codeNumber &amp;&amp; codeNumber &lt; 123) outString = outString + String.fromCharCode(97 + (122 - codeNumber))
+        else if (64 &lt; codeNumber &amp;&amp; codeNumber &lt; 91) outString = outString + String.fromCharCode(65 + (90 - codeNumber))
+        else outString = outString + String.fromCharCode(codeNumber)
     }
-<span class="cstat-no" title="statement not covered" >    return outString</span>
+    return outString
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -91,7 +91,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Nov 20 2021 17:40:56 GMT+0300 (Moscow Standard Time)
+                at Sat Nov 20 2021 17:54:42 GMT+0300 (Moscow Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
