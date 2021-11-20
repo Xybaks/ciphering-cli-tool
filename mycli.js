@@ -2,11 +2,11 @@
 const path = require('path');
 // const fs = require('fs');
 const { stdout, argv } = require("process")
-const argumentsCheckFunction = require('./functions/argumentsCheckFn');
-const MyReadStream = require('./streams/myReadStream')
-const MyStdinStream = require('./streams/MyStdinStream')
-const MyTransformStream = require('./streams/myTransformStream')
-const MyWriteStream = require('./streams/myWriteStream')
+const argumentsCheckFunction = require('./src/functions/argumentsCheckFn');
+const MyReadStream = require('./src/streams/myReadStream')
+const MyStdinStream = require('./src/streams/MyStdinStream')
+const MyTransformStream = require('./src/streams/myTransformStream')
+const MyWriteStream = require('./src/streams/myWriteStream')
 
 //try to get valid data from args
 const argumentsData = argumentsCheckFunction(argv.slice(2)) // validation of function's arguments is inside
