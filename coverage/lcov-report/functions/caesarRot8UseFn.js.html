@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -83,58 +83,58 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">76x</span>
+<span class="cline-any cline-yes">76x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >module.exports = <span class="fstat-no" title="function not covered" >(i</span>nString, codingNumber) =&gt; {</span>
-    let jumpNumber = <span class="cstat-no" title="statement not covered" >codingNumber % 26</span>
-    let outString = <span class="cstat-no" title="statement not covered" >'';</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; inString.length; i++) {</span>
-        let codeNumber = <span class="cstat-no" title="statement not covered" >inString.charCodeAt(i);</span>
-<span class="cstat-no" title="statement not covered" >        if (96 &lt; codeNumber &amp;&amp; codeNumber &lt; 123) {</span>
-<span class="cstat-no" title="statement not covered" >            codeNumber += jumpNumber</span>
-<span class="cstat-no" title="statement not covered" >            if (codeNumber &gt; 122) {</span>
-<span class="cstat-no" title="statement not covered" >                codeNumber = codeNumber - 26</span>
-            } else <span class="cstat-no" title="statement not covered" >if (codeNumber &lt; 97) {</span>
-<span class="cstat-no" title="statement not covered" >                codeNumber = codeNumber + 26</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = (inString, codingNumber) =&gt; {
+    let jumpNumber = codingNumber % 26
+    let outString = '';
+    for (let i = 0; i &lt; inString.length; i++) {
+        let codeNumber = inString.charCodeAt(i);
+        if (96 &lt; codeNumber &amp;&amp; codeNumber &lt; 123) {
+            codeNumber += jumpNumber
+            if (codeNumber &gt; 122) {
+                codeNumber = codeNumber - 26
+            } else if (codeNumber &lt; 97) {
+                codeNumber = codeNumber + 26
             }
-<span class="cstat-no" title="statement not covered" >            outString += String.fromCharCode(codeNumber)</span>
+            outString += String.fromCharCode(codeNumber)
         }
-        else <span class="cstat-no" title="statement not covered" >if (64 &lt; codeNumber &amp;&amp; codeNumber &lt; 91) {</span>
-<span class="cstat-no" title="statement not covered" >            codeNumber += jumpNumber</span>
-<span class="cstat-no" title="statement not covered" >            if (codeNumber &gt; 90) {</span>
-<span class="cstat-no" title="statement not covered" >                codeNumber = codeNumber - 26</span>
-            } else <span class="cstat-no" title="statement not covered" >if (codeNumber &lt; 65) {</span>
-<span class="cstat-no" title="statement not covered" >                codeNumber = codeNumber + 26</span>
+        else if (64 &lt; codeNumber &amp;&amp; codeNumber &lt; 91) {
+            codeNumber += jumpNumber
+            if (codeNumber &gt; 90) {
+                codeNumber = codeNumber - 26
+            } else if (codeNumber &lt; 65) {
+                codeNumber = codeNumber + 26
             }
-<span class="cstat-no" title="statement not covered" >            outString += String.fromCharCode(codeNumber)</span>
+            outString += String.fromCharCode(codeNumber)
         }
-        else <span class="cstat-no" title="statement not covered" >outString = outString + String.fromCharCode(codeNumber)</span>
+        else outString = outString + String.fromCharCode(codeNumber)
     }
-<span class="cstat-no" title="statement not covered" >    return outString</span>
+    return outString
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -142,7 +142,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Nov 20 2021 17:54:42 GMT+0300 (Moscow Standard Time)
+                at Sat Nov 20 2021 18:09:14 GMT+0300 (Moscow Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

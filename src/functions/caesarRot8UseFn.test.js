@@ -1,27 +1,10 @@
-module.exports = (inString, codingNumber) => {
-    let jumpNumber = codingNumber % 26
-    let outString = '';
-    for (let i = 0; i < inString.length; i++) {
-        let codeNumber = inString.charCodeAt(i);
-        if (96 < codeNumber && codeNumber < 123) {
-            codeNumber += jumpNumber
-            if (codeNumber > 122) {
-                codeNumber = codeNumber - 26
-            } else if (codeNumber < 97) {
-                codeNumber = codeNumber + 26
-            }
-            outString += String.fromCharCode(codeNumber)
-        }
-        else if (64 < codeNumber && codeNumber < 91) {
-            codeNumber += jumpNumber
-            if (codeNumber > 90) {
-                codeNumber = codeNumber - 26
-            } else if (codeNumber < 65) {
-                codeNumber = codeNumber + 26
-            }
-            outString += String.fromCharCode(codeNumber)
-        }
-        else outString = outString + String.fromCharCode(codeNumber)
-    }
-    return outString
-}
+const caesarRot8UseFn = require('./caesarRot8UseFn');
+
+test('caesar works correct', () => {
+    const inString = "ABCDabcd+-Щ=&XYZxyz"
+
+    expect(caesarRot8UseFn(inString, +1)).toBe("BCDEbcde+-Щ=&YZAyza")
+    expect(caesarRot8UseFn(inString, -1)).toBe("ZABCzabc+-Щ=&WXYwxy")
+    expect(caesarRot8UseFn(inString, +8)).toBe("IJKLijkl+-Щ=&FGHfgh")
+    expect(caesarRot8UseFn(inString, -8)).toBe("STUVstuv+-Щ=&PQRpqr")
+})
