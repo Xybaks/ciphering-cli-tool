@@ -5,7 +5,8 @@
   "main": "./mycli.js",
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.js"
+      "src/**/*.js",
+      "*.js"
     ]
   },
   "scripts": {

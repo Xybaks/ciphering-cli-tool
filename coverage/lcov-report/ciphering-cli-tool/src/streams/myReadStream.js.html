@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for streams/myWriteStream.js</title>
+    <title>Code coverage report for ciphering-cli-tool/src/streams/myReadStream.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">streams</a> myWriteStream.js</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">ciphering-cli-tool/src/streams</a> myReadStream.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>0/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
@@ -94,31 +94,15 @@
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,64 +112,101 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-const { Writable } = <span class="cstat-no" title="statement not covered" >require('stream')</span>
-const fs = <span class="cstat-no" title="statement not covered" >require('fs')</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { Readable } = <span class="cstat-no" title="statement not covered" >require('stream');</span>
+const fs = <span class="cstat-no" title="statement not covered" >require('fs');</span>
 &nbsp;
 const MyCustomError = <span class="cstat-no" title="statement not covered" >require('../customError/myCustomError')</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >module.exports = class MyWriteStream extends Writable {</span>
+class MyReadStream extends Readable {
 <span class="fstat-no" title="function not covered" >    co</span>nstructor(filename) {
-<span class="cstat-no" title="statement not covered" >        super()</span>
-<span class="cstat-no" title="statement not covered" >        this.filename = filename</span>
-<span class="cstat-no" title="statement not covered" >        this.fd = null</span>
+<span class="cstat-no" title="statement not covered" >        super();</span>
+<span class="cstat-no" title="statement not covered" >        this.filename = filename;</span>
+<span class="cstat-no" title="statement not covered" >        this.fd = null;</span>
     }
     // these 3 methods run one-by-one 
-    //'r+' - flag to add to existing text 'a+' - flag to add new file   https://habr.com/ru/company/ruvds/blog/424969/
+    //
 <span class="fstat-no" title="function not covered" >    _c</span>onstruct(callback) {
 <span class="cstat-no" title="statement not covered" >        fs.open(this.filename, 'a+', <span class="fstat-no" title="function not covered" >(e</span>rr, fd) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (err) {</span>
-<span class="cstat-no" title="statement not covered" >                throw new MyCustomError(`application can't use output file `)</span>
+<span class="cstat-no" title="statement not covered" >                throw new MyCustomError(`App can't open the input file`)</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                this.fd = fd</span>
-<span class="cstat-no" title="statement not covered" >                callback()</span>
+<span class="cstat-no" title="statement not covered" >                this.fd = fd;</span>
+<span class="cstat-no" title="statement not covered" >                callback();</span>
             }
-        })
+        });
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    _w</span>rite(chunk, _encoding, callback) {
-<span class="cstat-no" title="statement not covered" >        fs.write(this.fd, chunk, callback)</span>
+<span class="fstat-no" title="function not covered" >    _r</span>ead(n) {
+        const buf = <span class="cstat-no" title="statement not covered" >Buffer.alloc(n);</span>
+<span class="cstat-no" title="statement not covered" >        fs.read(this.fd, buf, 0, n, null, <span class="fstat-no" title="function not covered" >(e</span>rr, bytesRead) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                this.destroy(err)</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.push(bytesRead &gt; 0 ? buf.slice(0, bytesRead) : null);</span>
+            }
+        });
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    _d</span>estroy(err, callback) {
 <span class="cstat-no" title="statement not covered" >        if (this.fd) {</span>
-<span class="cstat-no" title="statement not covered" >            fs.write(this.fd, '', callback)</span>
-<span class="cstat-no" title="statement not covered" >            fs.close(this.fd, <span class="fstat-no" title="function not covered" >(e</span>r) =&gt; <span class="cstat-no" title="statement not covered" >callback(er || err))</span></span>
+<span class="cstat-no" title="statement not covered" >            fs.close(this.fd, <span class="fstat-no" title="function not covered" >(e</span>r) =&gt; <span class="cstat-no" title="statement not covered" >callback(er || err))</span>;</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            throw new MyCustomError(`application can't write to output file`)</span>
+<span class="cstat-no" title="statement not covered" >            callback(err)</span>
         }
     }
-}</pre></td></tr></table></pre>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = MyReadStream</span></pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Nov 20 2021 19:03:40 GMT+0300 (Moscow Standard Time)
+                at Sat Nov 20 2021 19:04:14 GMT+0300 (Moscow Standard Time)
             </div>
         </div>
-        <script src="../prettify.js"></script>
+        <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
     </body>
 </html>
     
