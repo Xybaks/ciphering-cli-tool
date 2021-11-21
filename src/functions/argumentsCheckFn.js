@@ -4,7 +4,7 @@ const MyCustomError = require('../customError/myCustomError')
 module.exports = (consoleArguments) => {
 
     if ((consoleArguments.length <= 1) || (consoleArguments.length % 2 === 1)) {
-        throw new MyCustomError('not valid number of  arguments of app or some argument is empty string ')
+        throw new MyCustomError('not valid number of  arguments of app or some argument is empty string')
     }
     let configCounter = 0
     let configIndex = -1
@@ -17,6 +17,7 @@ module.exports = (consoleArguments) => {
     let outputPath = ''
     let outputIndex = -1
 
+    let anotherCounter = 0
     consoleArguments.forEach((element, index) => {
         switch (element) {
             case '-c': {
@@ -61,6 +62,7 @@ module.exports = (consoleArguments) => {
                 }
                 break
             }
+            default: ++anotherCounter
         }
     });
     if (configCounter > 1) {
@@ -75,7 +77,9 @@ module.exports = (consoleArguments) => {
     if (outputPathCounter > 1) {
         throw new MyCustomError('You provided -o argument more than once')
     }
-
+    if (anotherCounter !== (configCounter + (inputPathCounter === -1 ? 0 : inputPathCounter) + (outputPathCounter === -1 ? 0 : outputPathCounter))) {
+        throw new MyCustomError('not valid number of  arguments of app or some argument is empty string')
+    }
     if (inputIndex > -1) inputPath = consoleArguments[inputIndex + 1]
     if (outputIndex > -1) outputPath = consoleArguments[outputIndex + 1]
     //check of wrong path to file

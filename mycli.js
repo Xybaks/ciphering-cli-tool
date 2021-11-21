@@ -1,4 +1,3 @@
-
 const path = require('path');
 // const fs = require('fs');
 const { stdout, argv } = require("process")
@@ -22,7 +21,7 @@ const finalReadStream = !!argumentsData.inputPath ?
 const finalTransformStream = new MyTransformStream({ configData })
 
 const finalWriteStream = !!argumentsData.outputPath ?
-    // fs.createWriteStream(outputPath)  //usual output stream  with rewriting
+    // fs.createWriteStream(outputPath)  //usual uotput stream  with rewriting
     new MyWriteStream(outputPath)
     : stdout
 

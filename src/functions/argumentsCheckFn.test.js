@@ -28,6 +28,8 @@ test('should make error of incorrect arguments', () => {
     const argConfigErr6 = ['-i', './iasdfnput.txt', '-o', './output.txt', '-c', 'C0']
     // with wrong output path
     const argConfigErr7 = ['-i', './input.txt', '-o', './ofasdfutput.txt', '-c', 'C0']
+    // with wrong args
+    const argConfigErr8 = ['-c "C1-C1-R0-A" rergwe twertwert']
 
 
     expect(() => argumentsCheckFunction(argConfigErr)).toThrowError(new MyCustomError("You provided -c argument more than once"))
@@ -36,12 +38,13 @@ test('should make error of incorrect arguments', () => {
     // without -c or --config
     expect(() => argumentsCheckFunction(argConfigErr4)).toThrowError(new MyCustomError('You don\'t provided -c argument'))
     // with wrong number of args
-    expect(() => argumentsCheckFunction(argConfigErr5)).toThrowError(new MyCustomError('not valid number of  arguments of app or some argument is empty string '))
+    expect(() => argumentsCheckFunction(argConfigErr5)).toThrowError(new MyCustomError('not valid number of  arguments of app or some argument is empty string'))
     // with wrong input path
     expect(() => argumentsCheckFunction(argConfigErr6)).toThrowError(new MyCustomError('App can\'t open the input file'))
     // with wrong output path
     expect(() => argumentsCheckFunction(argConfigErr7)).toThrowError(new MyCustomError('App can\'t open the output file'))
-
+    // with wrong args
+    expect(() => argumentsCheckFunction(argConfigErr8)).toThrowError(new MyCustomError('not valid number of  arguments of app or some argument is empty string'))
 
 })
 test('test input/output paths', () => {
